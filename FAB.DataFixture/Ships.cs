@@ -9,20 +9,20 @@ namespace Quadrivia.FAB
         public static FList<Ship> UnplacedShips5()
         {
              return FList.New(
-                new Ship(ShipFunctions.AircraftCarrier,5),
-                new Ship(ShipFunctions.Battleship, 4),
-                new Ship(ShipFunctions.Submarine, 3),
-                new Ship(ShipFunctions.Destroyer, 3),
-                new Ship(ShipFunctions.PatrolBoat, 2)
+                new Ship(Battleships.AircraftCarrier,5),
+                new Ship(Battleships.Battleship, 4),
+                new Ship(Battleships.Submarine, 3),
+                new Ship(Battleships.Destroyer, 3),
+                new Ship(Battleships.PatrolBoat, 2)
             );
         }
         public static FList<Ship> UnplacedShips4()
         {
             return FList.New(
-                new Ship(ShipFunctions.PatrolBoat, 2),
-                new Ship(ShipFunctions.PatrolBoat, 2),
-                new Ship(ShipFunctions.PatrolBoat, 2),
-                new Ship(ShipFunctions.PatrolBoat, 2)
+                new Ship(Battleships.PatrolBoat, 2),
+                new Ship(Battleships.PatrolBoat, 2),
+                new Ship(Battleships.PatrolBoat, 2),
+                new Ship(Battleships.PatrolBoat, 2)
             );
         }
 
@@ -31,8 +31,8 @@ namespace Quadrivia.FAB
         public static FList<Ship> SmallTestGame()
         {
             return FList.New(
-                new Ship(ShipFunctions.Minesweeper, 1,  new Location(2, 3), Orientations.Horizontal),
-                new Ship(ShipFunctions.Frigate, 2, new Location(4, 5), Orientations.Vertical)
+                new Ship(Battleships.Minesweeper, 1,  new Location(2, 3), Orientations.Horizontal),
+                new Ship(Battleships.Frigate, 2, new Location(4, 5), Orientations.Vertical)
             );
         }
     }

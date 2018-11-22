@@ -19,11 +19,11 @@ namespace Quadrivia.FAB
                 if (MenuOption == 1)
                 {
                     var ships = Ships.UnplacedShips5();
-                    Board = GameBoardFunctions.createBoardWithShipsPlacedRandomly(10, ships, FRandom.SeedFromClock(DateTime.Now));
+                    Board = Battleships.createBoardWithShipsPlacedRandomly(10, ships, FRandom.SeedFromClock(DateTime.Now));
                 }
                 if (MenuOption == 2)
                 {
-                    var ships = ShipFunctions.TrainingGame();
+                    var ships = Battleships.TrainingGame();
                     Board = new GameBoard(10, ships, "", noMisses);
                 }
                 PlayGame(Board);
@@ -51,7 +51,7 @@ namespace Quadrivia.FAB
 
         private static void PlayGame(GameBoard board)
         {
-            if (GameBoardFunctions.allSunk(board.Ships))
+            if (Battleships.allSunk(board.Ships))
             {
                 return;
             }
@@ -62,12 +62,12 @@ namespace Quadrivia.FAB
                 var loc = GetLocation();
                 if (missileType == "M")
                 {
-                    var newBoard = MissileFunctions.fireMissile(loc, board);
+                    var newBoard = Battleships.fireMissile(loc, board);
                     PlayGame(newBoard);
                 }
                 if (missileType == "B")
                 {
-                    var newBoard = MissileFunctions.fireBomb(loc, board);
+                    var newBoard = Battleships.fireBomb(loc, board);
                     PlayGame(newBoard);
                 }
             }
@@ -108,7 +108,7 @@ namespace Quadrivia.FAB
                 for (int col = 0; col < boardSize; col++)
                 {
                     var loc = new Location(col, row);
-                    SquareValues square = GameBoardFunctions.readSquare(board, loc);
+                    SquareValues square = Battleships.readSquare(board, loc);
                     switch (square)
                     {
                         case SquareValues.Empty:

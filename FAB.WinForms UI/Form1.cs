@@ -32,7 +32,7 @@ namespace Quadrivia.FAB
                 for (int row = 0; row < Board.Size; row++)
                 {
                     var loc = new Location(col, row);
-                    var square = GameBoardFunctions.readSquare(Board, loc);
+                    var square = Battleships.readSquare(Board, loc);
                     Brush brush = null;
                     switch (square)
                     {
@@ -70,7 +70,7 @@ namespace Quadrivia.FAB
         #region Button clicks
         private void button1_Click(object sender, EventArgs e)
         {
-            var ships = ShipFunctions.TrainingGame();
+            var ships = Battleships.TrainingGame();
 
             Board = new GameBoard(boardSize, ships, "", ImmutableHashSet.Create<Location>());
             DrawBoard();
@@ -82,14 +82,14 @@ namespace Quadrivia.FAB
             var row = Convert.ToInt16(comboBox1.SelectedItem);
             var col = Convert.ToInt16(comboBox2.SelectedItem);
             var loc = new Location(col, row);
-            Board = MissileFunctions.fireMissile(loc, Board);
+            Board = Battleships.fireMissile(loc, Board);
             DrawBoard();
             richTextBox1.Text = Board.Messages;
         }
         private void button3_Click(object sender, EventArgs e)
         {
             var ships = Ships.UnplacedShips5();
-            Board = GameBoardFunctions.createBoardWithShipsPlacedRandomly(Board.Size, ships, FRandom.SeedFromClock(DateTime.Now));
+            Board = Battleships.createBoardWithShipsPlacedRandomly(Board.Size, ships, FRandom.SeedFromClock(DateTime.Now));
             DrawBoard();
         }
 
@@ -98,7 +98,7 @@ namespace Quadrivia.FAB
             var row = Convert.ToInt16(comboBox1.SelectedItem);
             var col = Convert.ToInt16(comboBox2.SelectedItem);
             var loc = new Location(col, row);
-            Board = MissileFunctions.fireBomb(loc, Board);
+            Board = Battleships.fireBomb(loc, Board);
             DrawBoard();
             richTextBox1.Text = Board.Messages;
         }

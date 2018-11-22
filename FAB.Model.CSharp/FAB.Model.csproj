@@ -53,14 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameboardFunctions.cs" />
+    <Compile Include="Battleships %28Functions%29.cs" />
     <Compile Include="Location.cs" />
-    <Compile Include="MissileFunctions.cs" />
     <Compile Include="GameBoard.cs" />
     <Compile Include="Ship.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShipFunctions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
